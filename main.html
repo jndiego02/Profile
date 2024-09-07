@@ -1,0 +1,230 @@
+<section id="overview"></section>
+<div style="max-width: 950px;margin: 0 auto;padding: 20px;font-family: Arial, sans-serif;background-color: #fff;border-radius: 8px;box-shadow: 0 4px 8px rgba(0,0,0,0.1)">
+    
+    <!-- Scroll to Top Button -->
+    <button onclick="scrollToTop()" id="scrollUpBtn" title="Go to top" style="display: none; position: fixed; bottom: 20px; right: 30px; z-index: 1000; font-size: 18px; background-color: #00a8e1; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: opacity 0.3s ease;">&#9650; Top</button>
+    
+<script>
+        // Function to scroll to the top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show or hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+            const scrollUpBtn = document.getElementById('scrollUpBtn');
+            if (window.scrollY > 300) {
+                scrollUpBtn.style.display = 'block';
+            } else {
+                scrollUpBtn.style.display = 'none';
+            }
+        });
+    </script>
+
+<!-- Header Section -->
+  <header style="text-align: center; margin-bottom: 20px; padding: 20px 0; background-color: #ffffff; border-bottom: 2px solid #e9ecef;">
+    <img src="pic.png" alt="Profile Photo" style="border-radius: 50%; width: 150px; height: 150px;">
+    <h1 style="font-size: 2.2em; margin: 10px 0; color: #333;">name</h1>
+    <h2 style="font-size: 18px;color: #00a8e1;font-weight: bold">Customer Service Representative | Real Estate Cold Caller/VA | Canva Wiz</h2>
+    <p style="font-size: 15px; margin: 5px 0; color: #666;">Availability: Full-time (40 hrs/wk) | Location: Earth | Experience: 100 years</p>
+  </header>
+
+    <!-- Sticky Menu -->
+    <div style="position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; background-color: #ffffff; border-radius: 5px;">
+        <a href="#" onclick="openCVModal()" style="margin: 0 15px; text-decoration: none; color: #666; font-weight: bold; padding: 10px; border: 1px solid white; border-radius: 5px; transition: background-color 0.3s;">CV/Resume</a>
+        <a href="#overview" style="margin: 0 15px; text-decoration: none; color: #666; font-weight: bold; padding: 10px; border: 1px solid white; border-radius: 5px; transition: background-color 0.3s;">Overview</a>
+        <a href="#work-history" style="margin: 0 15px; text-decoration: none; color: #666; font-weight: bold; padding: 10px; border: 1px solid white; border-radius: 5px; transition: background-color 0.3s;">Work History</a>
+        <a href="#skills" style="margin: 0 15px; text-decoration: none; color: #666; font-weight: bold; padding: 10px; border: 1px solid white; border-radius: 5px; transition: background-color 0.3s;">Skills</a>
+        <a href="#portfolio" style="margin: 0 15px; text-decoration: none; color: #666; font-weight: bold; padding: 10px; border: 1px solid white; border-radius: 5px; transition: background-color 0.3s;">Portfolio</a>
+        <a href="#contact-info" style="margin: 0 15px; text-decoration: none; color: #666; font-weight: bold; padding: 10px; border: 1px solid white; border-radius: 5px; transition: background-color 0.3s;">Contact Info</a>
+    </div>
+
+    <!-- CV/Resume Modal Section -->
+    <div id="cvModal" style="display: none; position: fixed; z-index: 1001; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.8); animation-name: modalFadeIn; animation-duration: 0.4s;">
+        <span onclick="closeCVModal()" style="position: absolute; top: 20px; right: 35px; color: white; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
+        <div style="margin: auto; display: block; width: 50%; background-color: white; border-radius: 10px; text-align: center;">
+            <iframe src="resume.pdf" style="width: 100%; height: 1000px; border: none; border-radius: 10px;"></iframe>
+        </div>
+    </div>
+
+    <!-- Inline Script for Modal Functionality and Hover Effects -->
+    <script>
+        function openCVModal() {
+            document.getElementById("cvModal").style.display = "block";
+        }
+
+        function closeCVModal() {
+            document.getElementById("cvModal").style.display = "none";
+        }
+
+        document.querySelectorAll('a').forEach(function(anchor) {
+            anchor.addEventListener('mouseover', function() {
+                this.style.backgroundColor = '#00a8e1';
+                this.style.color = '#fff';
+            });
+            anchor.addEventListener('mouseout', function() {
+                this.style.backgroundColor = '';
+                this.style.color = '#666';
+            });
+        });
+
+        // Keyframes for modal fade-in animation
+        let styleSheet = document.createElement("style");
+        styleSheet.type = "text/css";
+        styleSheet.innerText = '@keyframes modalFadeIn { from { opacity: 0; } to { opacity: 1; } }';
+        document.head.appendChild(styleSheet);
+    </script>
+
+    <!-- Profile Overview -->
+    <section style="background-color: #f0f4f8;padding: 15px;border-radius: 8px;box-shadow: 0 2px 4px rgba(0,0,0,0.1);margin-bottom: 20px">
+        <h3 style="font-size: 20px;color: #333;font-weight: bold"><u>Overview</u></h3>
+        <p style="font-size: 15px;color: #666">
+text here
+</p><section id="work-history"></section>
+    </section>
+
+<!-- Work History Section -->
+    <section style="background-color: #f0f4f8;padding: 15px;border-radius: 8px;box-shadow: 0 2px 4px rgba(0,0,0,0.1);margin-bottom: 20px">
+        <h3 style="font-size: 20px;color: #333;font-weight: bold"><u>Work History</u></h3>
+        <div style="margin-bottom: 15px">
+            <h4 style="margin: 0 0 5px;font-size: 17.5px;color: #00a8e1;font-weight: bold">Customer Support Roles</h4>
+            <div style="margin-top: 10px">
+                <span style="color: #f39c12;font-size: 18px;margin-right: 2px">★</span>
+                <span style="color: #f39c12;font-size: 18px;margin-right: 2px">★</span>
+                <span style="color: #f39c12;font-size: 18px;margin-right: 2px">★</span>
+                <span style="color: #f39c12;font-size: 18px;margin-right: 2px">★</span>
+                <span style="color: #f39c12;font-size: 18px;margin-right: 2px">★</span>
+            </div>
+            <p style="font-size: 15px;color: #333"><strong>Company:</strong> Customer Support.</p>
+            <p style="font-size: 15px;color: #333"><strong>Company:</strong> Customer Service and Sales.</p>
+            <p style="font-size: 15px;color: #333"><strong>Company:</strong> Technical and Billing Support.</p>
+            <p style="font-size: 15px;color: #333"><strong>E-Commerce:</strong> Emails and Chats.</p>
+        </div>
+<br>
+         <div style="margin-bottom: 15px">
+            <h4 style="margin: 0 0 5px;font-size: 17.5px;color: #00a8e1;font-weight: bold">Real Estate Roles</h4>
+            <div style="margin-top: 10px">
+                <span style="color: #f39c12;font-size: 18px;margin-right: 2px">★</span>
+                <span style="color: #f39c12;font-size: 18px;margin-right: 2px">★</span>
+                <span style="color: #f39c12;font-size: 18px;margin-right: 2px">★</span>
+                <span style="color: #f39c12;font-size: 18px;margin-right: 2px">★</span>
+                <span style="color: #f39c12;font-size: 18px;margin-right: 2px">★</span>
+            </div>
+            <p style="font-size: 15px;color: #333"><strong>(Mortgage Company):</strong> Handled back-office tasks, including requesting documents.</p>
+            <p style="font-size: 15px;color: #333"><strong>Cold Caller:</strong> Reached out to potential clients, generated leads, and set up appointments.</p>
+        </div>
+        <!-- Add more work entries here as needed -->
+        <section id="skills"></section>
+    </section>
+
+    <!-- Skills Section -->
+    <section style="background-color: #f0f4f8;padding: 15px;border-radius: 8px;box-shadow: 0 2px 4px rgba(0,0,0,0.1);margin-bottom: 20px">
+        <h3 style="font-size: 20px;color: #333;font-weight: bold"><u>Skills</u></h3>
+        <ul style="list-style-type: none;padding: 0;font-size: 15px; display: flex;flex-wrap: wrap;margin: 0">
+            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Customer Service</li>
+            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Real Estate</li>
+            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Technical Support</li>
+            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Mortgage</li>
+            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Sales</li>
+            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Cold Calling</li>
+            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">E-commerce</li>
+            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Lead Generation</li>
+            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Virtual Assistance</li>
+            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Appointment Setting</li>
+            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Executive Support</li>
+            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Data Entry</li>
+            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Social Media Content</li>
+            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Photo and Video Editing</li>
+
+        </ul>
+        <section id="portfolio"></section>
+    </section>
+
+
+<!-- Portfolio Section -->
+<section style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px;">
+  <h3 style="font-size: 20px; color: #333; font-weight: bold;"><u>Portfolio</u></h3>
+  <h3 style="font-size: 17px; color: #666; font-weight: bold;">Background</h3>
+  <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <div style="width: calc(50% - 10px);">
+      <img src="iq.jpg" alt="Tools" style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; border: 1px solid #e1e8ee; transition: transform 0.3s ease, opacity 0.3s;" onclick="openModal(this.src, 'Tools')">
+      <p style="font-size: 14px; color: #333; text-align: center;">Tools</p>
+    </div>
+    <div style="width: calc(50% - 10px);">
+    <video controls style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; border: 1px solid #e1e8ee; transition: transform 0.3s ease, opacity 0.3s;">
+      <source src="vid.mp4" type="video/mp4">
+    </video>
+      <p style="font-size: 14px; color: #333; text-align: center;">Video Introduction</p>
+    </div>
+  </div>
+
+  <h3 style="font-size: 17px; color: #666; font-weight: bold;">Test Scores</h3>
+  <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <div style="width: calc(25% - 10px);">
+      <img src="disc.jpg" alt="DISC Test" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px; border: 1px solid #e1e8ee; transition: transform 0.3s ease, opacity 0.3s;" onclick="openModal(this.src, 'DISC Test')">
+      <p style="font-size: 14px; color: #333; text-align: center;">DISC Test</p>
+    </div>
+    <div style="width: calc(25% - 10px);">
+      <img src="iq.jpg" alt="IQ Test" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px; border: 1px solid #e1e8ee; transition: transform 0.3s ease, opacity 0.3s;" onclick="openModal(this.src, 'IQ Test')">
+      <p style="font-size: 14px; color: #333; text-align: center;">IQ Test</p>
+    </div>
+    <div style="width: calc(25% - 10px);">
+      <img src="english.jpg" alt="English Test" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px; border: 1px solid #e1e8ee; transition: transform 0.3s ease, opacity 0.3s;" onclick="openModal(this.src, 'English Test')">
+      <p style="font-size: 14px; color: #333; text-align: center;">English Test</p>
+    </div>
+    <div style="width: calc(25% - 10px);">
+      <img src="typing.jpg" alt="Typing Test" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px; border: 1px solid #e1e8ee; transition: transform 0.3s ease, opacity 0.3s;" onclick="openModal(this.src, 'Typing Test')">
+      <p style="font-size: 14px; color: #333; text-align: center;">Typing Test</p>
+    </div>
+  </div>
+</section>
+
+<!-- Modal for Image Preview -->
+<div id="imageModal" style="display: none; position: fixed; z-index: 1001; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.8);">
+  <span onclick="closeModal()" style="position: absolute; top: 20px; right: 35px; color: white; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
+  <img id="modalImg" style="margin: auto; display: block; width: 80%; max-width: 700px;">
+  <div id="modalCaption" style="text-align: center; color: white; padding: 10px 20px; font-size: 18px;"></div>
+</div>
+
+<!-- Hover Effects -->
+<style>
+  img:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+
+  /* Add fade-in effect to the modal */
+  #imageModal {
+    animation-name: modalFadeIn;
+    animation-duration: 0.4s;
+  }
+
+  @keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>
+
+<!-- Modal Script -->
+<script>
+  function openModal(src, caption) {
+    document.getElementById("imageModal").style.display = "block";
+    document.getElementById("modalImg").src = src;
+    document.getElementById("modalCaption").innerText = caption;
+  }
+
+  function closeModal() {
+    document.getElementById("imageModal").style.display = "none";
+  }
+</script>
+
+
+
+    <!-- Contact Information -->
+    <section id="contact-info" section style="background-color: #f0f4f8;padding: 15px;border-radius: 8px;box-shadow: 0 2px 4px rgba(0,0,0,0.1);margin-bottom: 20px">
+        <h3 style="font-size: 20px;color: #333;font-weight: bold"><u>Contact Information</u></h3>
+        <p>Email: <a href="mailto:email@example.com">email@example.com</a></p>
+        <p style="font-size: 16px;color: #333">Website: <a href="" target="_blank" style="color: #00a8e1;text-decoration: none"></a></p>
+        <p style="font-size: 16px;color: #333">Calendly: <a href="" target="_blank" style="color: #00a8e1;text-decoration: none"></a></p>
+    </section>
+</div>
