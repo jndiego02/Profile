@@ -29,25 +29,118 @@
     <p style="font-size: 15px; margin: 5px 0; color: #666;">Availability: Full-time (40 hrs/wk) | Location: Earth | Experience: 100 years</p>
   </header>
 
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        /* Sticky Menu */
+        .sticky-menu {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .menu-links {
+            display: flex;
+            justify-content: center;
+            flex: 1;
+        }
+        .menu-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #666;
+            font-weight: bold;
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .menu-links a:hover {
+            background-color: #00a8e1;
+            color: #fff;
+        }
+        .burger-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            margin-left: auto;
+        }
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 200px;
+        }
+        .burger-menu a {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            color: #666;
+        }
+        .burger-menu a:last-child {
+            border-bottom: none;
+        }
+        .burger-menu a:hover {
+            background-color: #00a8e1;
+            color: #fff;
+        }
+        /* Show burger icon on small screens */
+        @media (max-width: 768px) {
+            .menu-links {
+                display: none;
+            }
+            .burger-icon {
+                display: block;
+            }
+            .burger-menu.show {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
     <!-- Sticky Menu -->
-    <div style="position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; background-color: #ffffff; border-radius: 5px;">
-        <a href="#" onclick="openCVModal()" style="margin: 0 15px; text-decoration: none; color: #666; font-weight: bold; padding: 10px; border: 1px solid white; border-radius: 5px; transition: background-color 0.3s;">CV/Resume</a>
-        <a href="#overview" style="margin: 0 15px; text-decoration: none; color: #666; font-weight: bold; padding: 10px; border: 1px solid white; border-radius: 5px; transition: background-color 0.3s;">Overview</a>
-        <a href="#work-history" style="margin: 0 15px; text-decoration: none; color: #666; font-weight: bold; padding: 10px; border: 1px solid white; border-radius: 5px; transition: background-color 0.3s;">Work History</a>
-        <a href="#skills" style="margin: 0 15px; text-decoration: none; color: #666; font-weight: bold; padding: 10px; border: 1px solid white; border-radius: 5px; transition: background-color 0.3s;">Skills</a>
-        <a href="#portfolio" style="margin: 0 15px; text-decoration: none; color: #666; font-weight: bold; padding: 10px; border: 1px solid white; border-radius: 5px; transition: background-color 0.3s;">Portfolio</a>
-        <a href="#contact-info" style="margin: 0 15px; text-decoration: none; color: #666; font-weight: bold; padding: 10px; border: 1px solid white; border-radius: 5px; transition: background-color 0.3s;">Contact Info</a>
+    <div class="sticky-menu">
+        <div class="menu-links">
+            <a href="#" onclick="openCVModal()">CV/Resume</a>
+            <a href="#overview">Overview</a>
+            <a href="#work-history">Work History</a>
+            <a href="#skills">Skills</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact-info">Contact Info</a>
+        </div>
+        <div class="burger-icon" onclick="toggleBurgerMenu()">☰</div>
+        <div class="burger-menu" id="burgerMenu">
+            <a href="#" onclick="openCVModal()">CV/Resume</a>
+            <a href="#overview">Overview</a>
+            <a href="#work-history">Work History</a>
+            <a href="#skills">Skills</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact-info">Contact Info</a>
+        </div>
     </div>
 
     <!-- CV/Resume Modal Section -->
     <div id="cvModal" style="display: none; position: fixed; z-index: 1001; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.8); animation-name: modalFadeIn; animation-duration: 0.4s;">
         <span onclick="closeCVModal()" style="position: absolute; top: 20px; right: 35px; color: white; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
         <div style="margin: auto; display: block; width: 50%; background-color: white; border-radius: 10px; text-align: center;">
-            <iframe src="resume.pdf" style="width: 100%; height: 1000px; border: none; border-radius: 10px;"></iframe>
+            <iframe src="https://drive.google.com/file/d/RESUME_FILE/preview" style="width: 100%; height: 1000px; border: none; border-radius: 10px;"></iframe>
         </div>
     </div>
 
-    <!-- Inline Script for Modal Functionality and Hover Effects -->
+    <!-- Inline Script for Modal Functionality and Dropdown Menu -->
     <script>
         function openCVModal() {
             document.getElementById("cvModal").style.display = "block";
@@ -55,6 +148,10 @@
 
         function closeCVModal() {
             document.getElementById("cvModal").style.display = "none";
+        }
+
+        function toggleBurgerMenu() {
+            document.getElementById("burgerMenu").classList.toggle("show");
         }
 
         document.querySelectorAll('a').forEach(function(anchor) {
@@ -117,26 +214,25 @@ text here
         <section id="skills"></section>
     </section>
 
-    <!-- Skills Section -->
-    <section style="background-color: #f0f4f8;padding: 15px;border-radius: 8px;box-shadow: 0 2px 4px rgba(0,0,0,0.1);margin-bottom: 20px">
-        <h3 style="font-size: 20px;color: #333;font-weight: bold"><u>Skills</u></h3>
-        <ul style="list-style-type: none;padding: 0;font-size: 15px; display: flex;flex-wrap: wrap;margin: 0">
-            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Customer Service</li>
-            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Real Estate</li>
-            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Technical Support</li>
-            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Mortgage</li>
-            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Sales</li>
-            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Cold Calling</li>
-            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">E-commerce</li>
-            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Lead Generation</li>
-            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Virtual Assistance</li>
-            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Appointment Setting</li>
-            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Executive Support</li>
-            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Data Entry</li>
-            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Social Media Content</li>
-            <li style="background-color: #e1e8ee;margin: 5px;padding: 10px;border-radius: 25px;color: #666;flex: 1 1 calc(33% - 10px);text-align: center">Photo and Video Editing</li>
-
-        </ul>
+   <!-- Skills Section -->
+<section style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px;">
+    <h3 style="font-size: 20px; color: #333; font-weight: bold;"><u>Skills</u></h3>
+    <ul style="list-style-type: none; padding: 0; font-size: 15px; display: flex; flex-wrap: wrap; margin: 0;">
+        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">Customer Service</li>
+		
+        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">Technical Support</li>
+        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">Real Estate</li>
+        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666;text-align: center; box-sizing: border-box;">Mortgage</li>
+        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">E-commerce</li>
+        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">Sales</li>
+        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">Cold Calling</li>
+        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">Lead Generation</li>
+        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">Virtual Assistance</li>
+        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">Appointment Setting</li>
+        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">Executive Support</li>
+        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">Data Entry</li>
+        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">Photo and Video Editing</li>
+    </ul>
         <section id="portfolio"></section>
     </section>
 
@@ -151,9 +247,7 @@ text here
       <p style="font-size: 14px; color: #333; text-align: center;">Tools</p>
     </div>
     <div style="width: calc(50% - 10px);">
-    <video controls style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; border: 1px solid #e1e8ee; transition: transform 0.3s ease, opacity 0.3s;">
-      <source src="vid.mp4" type="video/mp4">
-    </video>
+    <iframe src="https://drive.google.com/file/d/FILE_ID/preview" width="100%" height="250px" allow="autoplay"></iframe>
       <p style="font-size: 14px; color: #333; text-align: center;">Video Introduction</p>
     </div>
   </div>
