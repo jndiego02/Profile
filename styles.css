@@ -391,12 +391,6 @@ body {
     border-radius: 5px;
 }
 
-nav a:hover, nav a:active{
-color: white;
-border-bottom: 3px solid white;
-}
-
-
 /* Modal Styles */
 .modal {
     display: none; /* Hidden by default */
