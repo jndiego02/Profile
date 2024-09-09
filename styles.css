@@ -140,9 +140,26 @@ body {
     gap: 30px;
 }
 
+/* Responsive Grid for Smaller Devices */
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Adjust minimum column width for medium screens */
+        gap: 10px;
+    }
+}
+
+@media (max-width: 420px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Adjust minimum column width for medium screens */
+        gap: 5px;
+    }
+}
+
+
 .article {
     background-color: #fff;
-    padding: 20px;
+    padding: 15px; /* Reduce padding for smaller screens */
+    margin-bottom: 20px; /* Add some margin to separate items vertically */
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
@@ -240,7 +257,7 @@ body {
     z-index: 1000;
     background-color: #333;
     color: white;
-    padding: 20px;
+    padding: 25px;
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -362,7 +379,7 @@ body {
 
 /* Add a border to verify hover effect is applied */
 .burger-menu ul li:hover {
-    background-color: #E5E4E2; /* Adjust the color to your liking */
+    border-bottom: 3px solid #333;
 }
 
 .burger-menu .button {
@@ -374,6 +391,10 @@ body {
     border-radius: 5px;
 }
 
+nav a:hover, nav a:active{
+color: white;
+border-bottom: 3px solid white;
+}
 
 
 /* Modal Styles */
@@ -412,4 +433,6 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
+
+
 
