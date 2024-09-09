@@ -1,324 +1,174 @@
-<section id="overview"></section>
-<div style="max-width: 950px;margin: 0 auto;padding: 20px;font-family: Arial, sans-serif;background-color: #fff;border-radius: 8px;box-shadow: 0 4px 8px rgba(0,0,0,0.1)">
-    
-    <!-- Scroll to Top Button -->
-    <button onclick="scrollToTop()" id="scrollUpBtn" title="Go to top" style="display: none; position: fixed; bottom: 20px; right: 30px; z-index: 1000; font-size: 18px; background-color: #00a8e1; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: opacity 0.3s ease;">&#9650; Top</button>
-    
-<script>
-        // Function to scroll to the top
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Show or hide the button based on scroll position
-        window.addEventListener('scroll', () => {
-            const scrollUpBtn = document.getElementById('scrollUpBtn');
-            if (window.scrollY > 300) {
-                scrollUpBtn.style.display = 'block';
-            } else {
-                scrollUpBtn.style.display = 'none';
-            }
-        });
-    </script>
-
-<!-- Header Section -->
-  <header style="text-align: center; margin-bottom: 20px; padding: 20px 0; background-color: #ffffff; border-bottom: 2px solid #e9ecef;">
-    <img src="pic.png" alt="Profile Photo" style="border-radius: 50%; width: 150px; height: 150px;">
-    <h1 style="font-size: 2.2em; margin: 10px 0; color: #333;">name</h1>
-    <h2 style="font-size: 18px;color: #00a8e1;font-weight: bold">Customer Service Representative | Real Estate Cold Caller/VA | Canva Wiz</h2>
-    <p style="font-size: 15px; margin: 5px 0; color: #666;">Availability: Full-time (40 hrs/wk) | Location: Earth | Experience: 100 years</p>
-  </header>
-
-    <style>
-        /* General Styles */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        /* Sticky Menu */
-        .sticky-menu {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #ffffff;
-            border-radius: 5px;
-            padding: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .menu-links {
-            display: flex;
-            justify-content: center;
-            flex: 1;
-        }
-        .menu-links a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #666;
-            font-weight: bold;
-            padding: 10px;
-            border: 1px solid white;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .menu-links a:hover {
-            background-color: #00a8e1;
-            color: #fff;
-        }
-        .burger-icon {
-            display: none;
-            font-size: 30px;
-            cursor: pointer;
-            margin-left: auto;
-        }
-        .burger-menu {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 60px;
-            right: 10px;
-            background-color: #ffffff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            width: 200px;
-        }
-        .burger-menu a {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-            color: #666;
-        }
-        .burger-menu a:last-child {
-            border-bottom: none;
-        }
-        .burger-menu a:hover {
-            background-color: #00a8e1;
-            color: #fff;
-        }
-        /* Show burger icon on small screens */
-        @media (max-width: 768px) {
-            .menu-links {
-                display: none;
-            }
-            .burger-icon {
-                display: block;
-            }
-            .burger-menu.show {
-                display: flex;
-            }
-        }
-    </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Freelance Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 <body>
-    <!-- Sticky Menu -->
-    <div class="sticky-menu">
-        <div class="menu-links">
-            <a href="#" onclick="openCVModal()">CV/Resume</a>
-            <a href="#overview">Overview</a>
-            <a href="#work-history">Work History</a>
-            <a href="#skills">Skills</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact-info">Contact Info</a>
-        </div>
-        <div class="burger-icon" onclick="toggleBurgerMenu()">☰</div>
-        <div class="burger-menu" id="burgerMenu">
-            <a href="#" onclick="openCVModal()">CV/Resume</a>
-            <a href="#overview">Overview</a>
-            <a href="#work-history">Work History</a>
-            <a href="#skills">Skills</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact-info">Contact Info</a>
-        </div>
-    </div>
 
-    <!-- CV/Resume Modal Section -->
-    <div id="cvModal" style="display: none; position: fixed; z-index: 1001; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.8); animation-name: modalFadeIn; animation-duration: 0.4s;">
-        <span onclick="closeCVModal()" style="position: absolute; top: 20px; right: 35px; color: white; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
-        <div style="margin: auto; display: block; width: 50%; background-color: white; border-radius: 10px; text-align: center;">
-            <iframe src="https://drive.google.com/file/d/RESUME_FILE/preview" style="width: 100%; height: 1000px; border: none; border-radius: 10px;"></iframe>
-        </div>
-    </div>
+<section id="overview" class="overview">
 
-    <!-- Inline Script for Modal Functionality and Dropdown Menu -->
-    <script>
-        function openCVModal() {
-            document.getElementById("cvModal").style.display = "block";
-        }
+    <!-- Scroll to Top Button -->
+    <button onclick="scrollToTop()" id="scrollTopBtn" style="display: none;">&#9650; Top</button>
 
-        function closeCVModal() {
-            document.getElementById("cvModal").style.display = "none";
-        }
+    <!-- Header Section -->
+    <header class="header">
+<!-- Burger Menu Icon -->
+<div class="container">
+<div class="burger-icon" onclick="toggleBurgerMenu()">&#9776;</div>
 
-        function toggleBurgerMenu() {
-            document.getElementById("burgerMenu").classList.toggle("show");
-        }
-
-        document.querySelectorAll('a').forEach(function(anchor) {
-            anchor.addEventListener('mouseover', function() {
-                this.style.backgroundColor = '#00a8e1';
-                this.style.color = '#fff';
-            });
-            anchor.addEventListener('mouseout', function() {
-                this.style.backgroundColor = '';
-                this.style.color = '#666';
-            });
-        });
-
-        // Keyframes for modal fade-in animation
-        let styleSheet = document.createElement("style");
-        styleSheet.type = "text/css";
-        styleSheet.innerText = '@keyframes modalFadeIn { from { opacity: 0; } to { opacity: 1; } }';
-        document.head.appendChild(styleSheet);
-    </script>
-
-    <!-- Profile Overview -->
-    <section style="background-color: #f0f4f8;padding: 15px;border-radius: 8px;box-shadow: 0 2px 4px rgba(0,0,0,0.1);margin-bottom: 20px">
-        <h3 style="font-size: 20px;color: #333;font-weight: bold"><u>Overview</u></h3>
-        <p style="font-size: 15px;color: #666">
-text here
-</p><section id="work-history"></section>
-    </section>
-
-<!-- Work History Section -->
-    <section style="background-color: #f0f4f8;padding: 15px;border-radius: 8px;box-shadow: 0 2px 4px rgba(0,0,0,0.1);margin-bottom: 20px">
-        <h3 style="font-size: 20px;color: #333;font-weight: bold"><u>Work History</u></h3>
-        <div style="margin-bottom: 15px">
-            <h4 style="margin: 0 0 5px;font-size: 17.5px;color: #00a8e1;font-weight: bold">Customer Support Roles</h4>
-            <div style="margin-top: 10px">
-                <span style="color: #f39c12;font-size: 18px;margin-right: 2px">★</span>
-                <span style="color: #f39c12;font-size: 18px;margin-right: 2px">★</span>
-                <span style="color: #f39c12;font-size: 18px;margin-right: 2px">★</span>
-                <span style="color: #f39c12;font-size: 18px;margin-right: 2px">★</span>
-                <span style="color: #f39c12;font-size: 18px;margin-right: 2px">★</span>
-            </div>
-            <p style="font-size: 15px;color: #333"><strong>Company:</strong> Customer Support.</p>
-            <p style="font-size: 15px;color: #333"><strong>Company:</strong> Customer Service and Sales.</p>
-            <p style="font-size: 15px;color: #333"><strong>Company:</strong> Technical and Billing Support.</p>
-            <p style="font-size: 15px;color: #333"><strong>E-Commerce:</strong> Emails and Chats.</p>
-        </div>
-<br>
-         <div style="margin-bottom: 15px">
-            <h4 style="margin: 0 0 5px;font-size: 17.5px;color: #00a8e1;font-weight: bold">Real Estate Roles</h4>
-            <div style="margin-top: 10px">
-                <span style="color: #f39c12;font-size: 18px;margin-right: 2px">★</span>
-                <span style="color: #f39c12;font-size: 18px;margin-right: 2px">★</span>
-                <span style="color: #f39c12;font-size: 18px;margin-right: 2px">★</span>
-                <span style="color: #f39c12;font-size: 18px;margin-right: 2px">★</span>
-                <span style="color: #f39c12;font-size: 18px;margin-right: 2px">★</span>
-            </div>
-            <p style="font-size: 15px;color: #333"><strong>(Mortgage Company):</strong> Handled back-office tasks, including requesting documents.</p>
-            <p style="font-size: 15px;color: #333"><strong>Cold Caller:</strong> Reached out to potential clients, generated leads, and set up appointments.</p>
-        </div>
-        <!-- Add more work entries here as needed -->
-        <section id="skills"></section>
-    </section>
-
-   <!-- Skills Section -->
-<section style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px;">
-    <h3 style="font-size: 20px; color: #333; font-weight: bold;"><u>Skills</u></h3>
-    <ul style="list-style-type: none; padding: 0; font-size: 15px; display: flex; flex-wrap: wrap; margin: 0;">
-        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">Customer Service</li>
-		
-        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">Technical Support</li>
-        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">Real Estate</li>
-        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666;text-align: center; box-sizing: border-box;">Mortgage</li>
-        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">E-commerce</li>
-        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">Sales</li>
-        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">Cold Calling</li>
-        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">Lead Generation</li>
-        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">Virtual Assistance</li>
-        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">Appointment Setting</li>
-        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">Executive Support</li>
-        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">Data Entry</li>
-        <li style="background-color: #e1e8ee; margin: 5px; padding: 10px; border-radius: 25px; color: #666; text-align: center; box-sizing: border-box;">Photo and Video Editing</li>
+<!-- Menu Items (Collapsed) -->
+<nav class="burger-menu" id="burgerMenu">
+    <ul>
+        <li><a href="#" onclick="openCVModal()">CV/Resume</a></li>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#work-history">Work History</a></li>
+        <li><a href="#contact">Contacts</a></li>
+        <li><a href="mailto:email@example.com" class="button">Let's Connect!</a></li>
     </ul>
-        <section id="portfolio"></section>
+</nav>
+</div>
+    </header>
+
+    <!-- Resume -->
+    <div id="cvModal">
+    <span class="close-button" onclick="closeCVModal()">&times;</span>
+    <div class="modal-content">
+        <iframe src="resume.pdf"></iframe>
+    </div>
+    </div>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <img src="pic.png" alt="Profile Photo" class="profile-photo">
+            <h2>Freelance Writer & Content Creator</h2>
+            <p>Helping businesses with content strategy, social media management, and SEO.</p>
+            <a href="#work-history" class="button">My Work History</a>
+        </div>
     </section>
 
-
-<!-- Portfolio Section -->
-<section style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px;">
-  <h3 style="font-size: 20px; color: #333; font-weight: bold;"><u>Portfolio</u></h3>
-  <h3 style="font-size: 17px; color: #666; font-weight: bold;">Background</h3>
-  <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-    <div style="width: calc(50% - 10px);">
-      <img src="iq.jpg" alt="Tools" style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; border: 1px solid #e1e8ee; transition: transform 0.3s ease, opacity 0.3s;" onclick="openModal(this.src, 'Tools')">
-      <p style="font-size: 14px; color: #333; text-align: center;">Tools</p>
-    </div>
-    <div style="width: calc(50% - 10px);">
-    <iframe src="https://drive.google.com/file/d/FILE_ID/preview" width="100%" height="250px" allow="autoplay"></iframe>
-      <p style="font-size: 14px; color: #333; text-align: center;">Video Introduction</p>
-    </div>
-  </div>
-
-  <h3 style="font-size: 17px; color: #666; font-weight: bold;">Test Scores</h3>
-  <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-    <div style="width: calc(25% - 10px);">
-      <img src="disc.jpg" alt="DISC Test" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px; border: 1px solid #e1e8ee; transition: transform 0.3s ease, opacity 0.3s;" onclick="openModal(this.src, 'DISC Test')">
-      <p style="font-size: 14px; color: #333; text-align: center;">DISC Test</p>
-    </div>
-    <div style="width: calc(25% - 10px);">
-      <img src="iq.jpg" alt="IQ Test" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px; border: 1px solid #e1e8ee; transition: transform 0.3s ease, opacity 0.3s;" onclick="openModal(this.src, 'IQ Test')">
-      <p style="font-size: 14px; color: #333; text-align: center;">IQ Test</p>
-    </div>
-    <div style="width: calc(25% - 10px);">
-      <img src="english.jpg" alt="English Test" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px; border: 1px solid #e1e8ee; transition: transform 0.3s ease, opacity 0.3s;" onclick="openModal(this.src, 'English Test')">
-      <p style="font-size: 14px; color: #333; text-align: center;">English Test</p>
-    </div>
-    <div style="width: calc(25% - 10px);">
-      <img src="typing.jpg" alt="Typing Test" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px; border: 1px solid #e1e8ee; transition: transform 0.3s ease, opacity 0.3s;" onclick="openModal(this.src, 'Typing Test')">
-      <p style="font-size: 14px; color: #333; text-align: center;">Typing Test</p>
-    </div>
-  </div>
-</section>
-
-<!-- Modal for Image Preview -->
-<div id="imageModal" style="display: none; position: fixed; z-index: 1001; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.8);">
-  <span onclick="closeModal()" style="position: absolute; top: 20px; right: 35px; color: white; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
-  <img id="modalImg" style="margin: auto; display: block; width: 80%; max-width: 700px;">
-  <div id="modalCaption" style="text-align: center; color: white; padding: 10px 20px; font-size: 18px;"></div>
-</div>
-
-<!-- Hover Effects -->
-<style>
-  img:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-  }
-
-  /* Add fade-in effect to the modal */
-  #imageModal {
-    animation-name: modalFadeIn;
-    animation-duration: 0.4s;
-  }
-
-  @keyframes modalFadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-</style>
-
-<!-- Modal Script -->
-<script>
-  function openModal(src, caption) {
-    document.getElementById("imageModal").style.display = "block";
-    document.getElementById("modalImg").src = src;
-    document.getElementById("modalCaption").innerText = caption;
-  }
-
-  function closeModal() {
-    document.getElementById("imageModal").style.display = "none";
-  }
-</script>
-
-
-
-    <!-- Contact Information -->
-    <section id="contact-info" section style="background-color: #f0f4f8;padding: 15px;border-radius: 8px;box-shadow: 0 2px 4px rgba(0,0,0,0.1);margin-bottom: 20px">
-        <h3 style="font-size: 20px;color: #333;font-weight: bold"><u>Contact Information</u></h3>
-        <p>Email: <a href="mailto:email@example.com">email@example.com</a></p>
-        <p style="font-size: 16px;color: #333">Website: <a href="" target="_blank" style="color: #00a8e1;text-decoration: none"></a></p>
-        <p style="font-size: 16px;color: #333">Calendly: <a href="" target="_blank" style="color: #00a8e1;text-decoration: none"></a></p>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h3>Skills</h3>
+            <ul class="skills-list">
+                <li>Customer Service</li>
+                <li>Real Estate</li>
+                <li>Technical Support</li>
+                <li>Mortgage</li>
+                <li>Sales</li>
+                <li>Cold Calling</li>
+                <li>E-commerce</li>
+                <li>Lead Generation</li>
+                <li>Virtual Assistance</li>
+                <li>Appointment Setting</li>
+                <li>Executive Support</li>
+                <li>Data Entry</li>
+                <li>Social Media Content</li>
+                <li>Photo and Video Editing</li>
+            </ul>
+        </div>
     </section>
+
+    <!-- Work History Section -->
+    <section id="work-history" class="work-history">
+    <div class="container">
+        <h2>Work History</h2>
+
+        <!-- Customer Support Roles -->
+        <h3>Customer Support Roles</h3>
+        <p>★ ★ ★ ★ ★</p>
+        <ul>
+            <li><strong>Company:</strong> Customer Support.</li>
+            <li><strong>Company:</strong> Customer Service and Sales.</li>
+            <li><strong>Company:</strong> Technical and Billing Support.</li>
+            <li><strong>E-Commerce:</strong> Emails and Chats.</li>
+        </ul>
+
+        <!-- Real Estate Roles -->
+        <h3>Real Estate Roles</h3>
+        <p>★ ★ ★ ★ ★</p>
+        <ul>
+            <li><strong>(Mortgage Company):</strong> Handled back-office tasks, including requesting documents.</li>
+            <li><strong>Cold Caller:</strong> Reached out to potential clients, generated leads, and set up appointments.</li>
+        </ul>
+    </div>
+
+    <!-- Blog Articles Section -->
+
+        <div class="container">
+            <h3>Background and Test Scores</h3>
+            <div class="grid">
+                <!-- Tools Image - Positioned below the articles -->
+            <div class="article" style="grid-column: span 2;">
+                <a href="javascript:void(0);" onclick="openModal('iq.jpg')">
+                    <img src="iq.jpg" alt="Tools" style="width: 100%; height: 250px; object-fit: cover;">
+                </a>
+                <p>Tools</p>
+            </div>
+
+            <!-- Video Introduction - Positioned below the articles -->
+            <div class="article" style="grid-column: span 2;">
+                <iframe src="https://drive.google.com/file/d/FILE_ID/preview" width="100%" height="250px" style="border-radius: 5px; border: 1px solid #e1e8ee;" allow="autoplay" allowfullscreen></iframe>
+                <p>Video Introduction</p>
+            </div>
+
+                <div class="article">
+                    <a href="javascript:void(0);" onclick="openModal('disc.jpg')">
+                    <img src="disc.jpg" alt="DISC Test">
+                    </a>
+                    <p>DISC Test</p>
+                </div>
+                <div class="article">
+                    <a href="javascript:void(0);" onclick="openModal('iq.jpg')">
+                    <img src="iq.jpg" alt="IQ Test">
+                    </a>
+                    <p>IQ Test</p>
+                </div>
+                <div class="article">
+                    <a href="javascript:void(0);" onclick="openModal('english.jpg')">
+                    <img src="english.jpg" alt="English Test">
+                    </a>
+                    <p>English Test</p>
+                </div>
+                <div class="article">
+                    <a href="javascript:void(0);" onclick="openModal('typing.jpg')">
+                    <img src="typing.jpg" alt="Typing Tests">
+                    </a>
+                    <p>Typing Tests</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <section id="contact" class="contact">
+        <div class="container">
+            <p>Sounds like what you need? Contact Me!</p>
+            <ul>
+                <li><a href="mailto:email@example.com">Email</a></li>
+                <li><a href="#">Website</a></li>
+                <li><a href="#">Calendly</a></li>
+            </ul>
+            <p>&copy; 2024 **Name** - All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Modal Structure -->
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
 </div>
+
+
+</body>
+</html>

@@ -1,0 +1,415 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.header nav ul li {
+    display: inline;
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    margin-top: -20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero .button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.profile-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border-style: solid;
+    border: 4.5px solid #333;
+    margin: 0 auto 20px;
+    padding: 4.5px;
+}
+
+.profile-photo:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Skills Section */
+.skills {
+    background-color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.skills h3 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skills-list li {
+    background-color: #e1e8ee;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: #666;
+    font-weight: bold;
+    flex: 0 1 auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.skills-list li:hover {
+    background-color: #c1d3e0; /* Adjust the color to your liking */
+    color: #333; /* Adjust the text color to contrast with the hover background */
+}
+
+
+/* Work History Section */
+.work-history {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.work-history h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.article {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.article img {
+    max-width: 100%;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.article h3 {
+    margin-top: 15px;
+    font-size: 24px;
+}
+
+.article p {
+    font-size: 16px;
+    color: #666;
+}
+
+.article:hover {
+    transform: translateY(-10px);
+}
+
+.work-history h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.work-history h3 {
+    font-size: 23px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.work-history ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.work-history ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.work-history p {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+
+/* Footer Section */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer p {
+    margin: 20px 0 0;
+}
+
+/* Sticky Header */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Scroll to Top Button */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+    z-index: 1000;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+#scrollTopBtn:hover {
+    background-color: #555;
+}
+
+/* Modal container */
+#cvModal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation-name: modalFadeIn;
+    animation-duration: 0.4s;
+}
+
+/* Close button */
+#cvModal .close-button {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Modal content */
+#cvModal .modal-content {
+    margin: auto;
+    display: block;
+    width: 50%;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Iframe styling */
+#cvModal .modal-content iframe {
+    width: 100%;
+    height: 1000px;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Animation for modal fade-in */
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* Hide burger menu initially */
+.burger-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Initial horizontal menu layout */
+.burger-menu {
+    text-align: center; /* Center align items horizontally */
+}
+
+.burger-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    gap: 20px;
+}
+
+/* Initial horizontal menu items */
+.burger-menu ul li {
+    display: inline;
+}
+
+/* Make menu vertical in burger mode */
+@media (max-width: 768px) {
+    .burger-icon {
+        display: block;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+    .burger-menu.show {
+        display: block;
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        background-color: #fff;
+        z-index: 1000;
+        text-align: center; /* Center items horizontally */
+    }
+
+    .burger-menu ul {
+        display: flex;
+        flex-direction: column; /* Change to vertical layout in burger mode */
+        align-items: center; /* Center items horizontally in column layout */
+        padding: 0;
+    }
+
+    .burger-menu ul li {
+        margin-bottom: 10px;
+    }
+}
+
+/* Add a border to verify hover effect is applied */
+.burger-menu ul li:hover {
+    background-color: #E5E4E2; /* Adjust the color to your liking */
+}
+
+.burger-menu .button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
