@@ -18,16 +18,10 @@ body {
     background-color: #fff;
     padding: 20px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure header stays on top */
     animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }
 
 .header h1 {
@@ -61,19 +55,9 @@ body {
     animation: fadeIn 0.5s ease-in-out;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
 .hero h2 {
     font-size: 38px;
-    margin-bottom: 10px;
-    margin-top: -20px;
+    margin: -20px 0 10px;
 }
 
 .hero p {
@@ -91,24 +75,23 @@ body {
 }
 
 .hero .button:hover {
-    background-color: #fff; /* Adjust the color to your liking */
-    color: #333; /* Adjust the text color to contrast with the hover background */
+    background-color: #fff;
+    color: #333;
 }
 
 .profile-photo {
     width: 220px;
     height: 220px;
     border-radius: 50%;
-    border-style: solid;
     border: 4.5px solid #333;
     margin: 0 auto 20px;
     padding: 4.5px;
+    transition: transform 0.3s;
 }
 
 .profile-photo:hover {
     transform: translateY(-2px);
 }
-
 
 /* Skills Section */
 .skills {
@@ -116,15 +99,6 @@ body {
     text-align: center;
     margin-bottom: 50px;
     animation: fadeIn 2s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }
 
 .skills h3 {
@@ -147,13 +121,12 @@ body {
     border-radius: 25px;
     color: #666;
     font-weight: bold;
-    flex: 0 1 auto;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .skills-list li:hover {
-    background-color: #c1d3e0; /* Adjust the color to your liking */
-    color: #333; /* Adjust the text color to contrast with the hover background */
+    background-color: #c1d3e0;
+    color: #333;
 }
 
 /* Work History Section */
@@ -164,16 +137,6 @@ body {
     animation: fadeIn 3s ease-in-out;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -183,59 +146,57 @@ body {
 /* Responsive Grid for Smaller Devices */
 @media (max-width: 1440px) {
     .grid {
-        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); /* Adjust minimum column width for medium screens */
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
         gap: 10px;
     }
 }
 
-
 @media (max-width: 1080px) {
     .grid {
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Adjust minimum column width for medium screens */
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         gap: 10px;
     }
 }
 
 @media (max-width: 768px) {
     .grid {
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Adjust minimum column width for medium screens */
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
         gap: 10px;
     }
 }
 
-/* Responsive Grid for Smaller Devices */
 @media (max-width: 480px) {
     .grid {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Adjust minimum column width for medium screens */
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
         gap: 10px;
     }
 }
 
 @media (max-width: 420px) {
     .grid {
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Adjust minimum column width for medium screens */
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
         gap: 5px;
     }
 }
 
 @media (max-width: 375px) {
     .grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust minimum column width for medium screens */
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         gap: 5px;
     }
 }
 
 @media (max-width: 320px) {
     .grid {
-        grid-template-columns: repeat(auto-fill, minmax(135px, 1fr)); /* Adjust minimum column width for medium screens */
+        grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
         gap: 10px;
     }
 }
 
 .article {
     background-color: #fff;
-    padding: 15px; /* Reduce padding for smaller screens */
-    margin-bottom: 20px; /* Add some margin to separate items vertically */
+    padding: 15px;
+    margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
@@ -268,14 +229,12 @@ body {
 
 .work-history h3 {
     font-size: 23px;
-    margin-top: 40px;
-    margin-bottom: 10px;
+    margin: 40px 0 10px;
 }
 
 .work-history h4 {
     font-size: 20px;
-    margin-top: 40px;
-    margin-bottom: 30px;
+    margin: 40px 0 30px;
 }
 
 .work-history ul {
@@ -294,11 +253,16 @@ body {
     margin-bottom: 10px;
 }
 
-
+/* Calendly Section */
 .calendly {
     background-color: #f9f9f9;
     padding: 50px 0;
     text-align: center;
+}
+
+.calendly h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
 }
 
 /* Footer Section */
@@ -328,20 +292,6 @@ body {
     margin: 20px 0 0;
 }
 
-.calendly h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
-}
-
-/* Sticky Header */
-.header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 /* Scroll to Top Button */
 #scrollTopBtn {
     position: fixed;
@@ -355,10 +305,18 @@ body {
     border: none;
     cursor: pointer;
     display: none;
+    transition: background-color 0.3s;
 }
 
 #scrollTopBtn:hover {
     background-color: #555;
+}
+
+/* Show button on screens wider than 768px */
+@media (min-width: 768px) {
+    #scrollTopBtn {
+        display: block;
+    }
 }
 
 /* Modal container */
@@ -372,11 +330,9 @@ body {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.8);
-    animation-name: modalFadeIn;
-    animation-duration: 0.4s;
+    animation: modalFadeIn 0.4s;
 }
 
-/* Close button */
 #cvModal .close-button {
     position: absolute;
     top: 20px;
@@ -387,7 +343,6 @@ body {
     cursor: pointer;
 }
 
-/* Modal content */
 #cvModal .modal-content {
     margin: auto;
     display: block;
@@ -397,7 +352,6 @@ body {
     text-align: center;
 }
 
-/* Iframe styling */
 #cvModal .modal-content iframe {
     width: 100%;
     height: 1000px;
@@ -411,17 +365,16 @@ body {
     to { opacity: 1; }
 }
 
-
-/* Hide burger menu initially */
+/* Burger Menu Styles */
 .burger-icon {
     display: none;
     font-size: 30px;
     cursor: pointer;
+    z-index: 1000; /* Ensure burger icon stays on top of header */
 }
 
-/* Initial horizontal menu layout */
 .burger-menu {
-    text-align: center; /* Center align items horizontally */
+    text-align: center;
 }
 
 .burger-menu ul {
@@ -429,16 +382,14 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center; /* Center items horizontally */
+    justify-content: center;
     gap: 20px;
 }
 
-/* Initial horizontal menu items */
 .burger-menu ul li {
     display: inline;
 }
 
-/* Make menu vertical in burger mode */
 @media (max-width: 768px) {
     .burger-icon {
         display: block;
@@ -450,18 +401,20 @@ body {
 
     .burger-menu.show {
         display: block;
-        position: absolute;
+        position: fixed;
         top: 60px;
+        left: 0;
         width: 100%;
         background-color: #fff;
         z-index: 1000;
-        text-align: center; /* Center items horizontally */
+        text-align: center;
+        padding: 10px 0; /* Padding to make sure items are not too close to edges */
     }
 
     .burger-menu ul {
         display: flex;
-        flex-direction: column; /* Change to vertical layout in burger mode */
-        align-items: center; /* Center items horizontally in column layout */
+        flex-direction: column;
+        align-items: center;
         padding: 0;
     }
 
@@ -470,7 +423,6 @@ body {
     }
 }
 
-/* Add a border to verify hover effect is applied */
 .burger-menu ul li:hover {
     border-bottom: 3px solid #333;
 }
@@ -486,7 +438,7 @@ body {
 
 /* Modal Styles */
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -494,7 +446,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .modal-content {
@@ -517,17 +469,14 @@ body {
 .close:hover,
 .close:focus {
     color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
 }
 
-
-/* Typing animation styles */
+/* Typing Animation Styles */
 .typing-animation {
     font-size: 16px;
     color: #333;
     font-weight: bold;
-    display: inline-block; /* Ensures the cursor is inline with the text */
+    display: inline-block;
 }
 
 .cursor {
@@ -538,72 +487,65 @@ body {
     margin-left: 3px;
 }
 
-/* Cursor blinking effect */
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
 
-
 /* Dark Mode Styles */
 body.dark-mode {
-    background-color: #333; /* Dark background */
-    color: #ffffff; /* Light text color */
+    background-color: #333;
+    color: #fff;
 }
 
 body.dark-mode .header nav ul li a {
-    color: #ddd; /* Light text color for better visibility on dark backgrounds */
+    color: #ddd;
 }
 
 body.dark-mode .typing-animation {
-    color: #ddd; /* Light text color for the typing animation */
+    color: #ddd;
 }
 
 .header.dark-mode {
-    background-color: #1f1f1f; /* Darker header */
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Lighter shadow */
+    background-color: #1f1f1f;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
 }
 
 .hero.dark-mode, .work-history.dark-mode {
-    background-color: #222; /* Darker hero section */
+    background-color: #222;
 }
 
-/* Profile Picture Border for Dark Mode */
 body.dark-mode .profile-photo {
-    border-color: #ddd; /* Light border color for dark mode */
+    border-color: #ddd;
 }
 
 .skills.dark-mode,
 .footer.dark-mode {
-    background-color: #333; /* Darker background for sections */
+    background-color: #333;
 }
 
-/* Dark Mode for Star Rating */
 body.dark-mode .work-history p {
-    color: #ddd; /* Light color for stars in dark mode */
+    color: #ddd;
 }
 
-/* Dark Mode for Article Grid */
 body.dark-mode .article {
-    background-color: #333; /* Darker background for articles */
-    color: #ddd; /* Light text color for readability */
+    background-color: #333;
+    color: #ddd;
 }
 
 body.dark-mode .article p {
-    color: #bbb; /* Slightly lighter text color for paragraphs */
+    color: #bbb;
 }
 
 body.dark-mode .article h3 {
-    color: #fff; /* White color for headings */
+    color: #fff;
 }
-
 
 .skills-list li.dark-mode {
-    background-color: #333; /* Darker background for skill items */
-    color: #ddd; /* Lighter text color */
+    background-color: #333;
+    color: #ddd;
 }
 
-/* Button styles for dark mode */
 .button.dark-mode {
     background-color: #444;
     color: #ddd;
@@ -614,79 +556,73 @@ body.dark-mode .article h3 {
     color: #fff;
 }
 
-/* Scroll to Top Button for Dark Mode */
 #scrollTopBtn.dark-mode {
     background-color: #444;
     color: #fff;
 }
 
-/* Modal for Dark Mode */
 #cvModal.dark-mode {
-    background-color: rgba(255, 255, 255, 0.1); /* Light modal background */
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .modal-content.dark-mode {
-    background-color: #333; /* Darker modal content */
+    background-color: #333;
 }
 
-
-/* Smooth transition for mode switch */
+/* Smooth Transition for Mode Switch */
 body, .header, .hero, .skills, .work-history, .footer, .button, #scrollTopBtn, #cvModal, .modal-content {
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Dark Mode for Calendly Widget */
 body.dark-mode .calendly {
-    background-color: #222; /* Dark background for the container */
-    color: #ffffff; /* Light text color */
-    padding: 20px; /* Add some padding for better appearance */
-    border-radius: 10px; /* Rounded corners for a modern look */
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
 }
 
-/* Dark Mode for Calendly Inline Widget */
 body.dark-mode .calendly-inline-widget {
-    background-color: #222; /* Dark background color */
-    border: 1px solid #333; /* Border to match the dark theme */
+    background-color: #222;
+    border: 1px solid #333;
 }
 
-/* Dark Mode for Calendly Badge Widget */
 body.dark-mode .calendly-badge-widget {
-    background-color: #333 !important; /* Dark background color for the badge */
-    color: #ffffff !important; /* Light text color for the badge */
-    border-radius: 25px; /* Rounded corners for the badge */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    background-color: #333 !important;
+    color: #fff !important;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 body.dark-mode .calendly-badge-widget .calendly-badge-widget-button {
-    background-color: #333 !important; /* Dark background for button */
-    color: #ffffff !important; /* Light text color for button */
+    background-color: #333 !important;
+    color: #fff !important;
 }
-
 
 /* Floating Button Styles with Icons */
 #darkModeToggle {
-    position: fixed; /* Keeps button in a fixed position */
-    top: 20px; /* Distance from the top */
-    right: 20px; /* Distance from the right */
-    background-color: #333; /* Background color for button */
-    color: #fff; /* Text color */
-    border: none; /* Remove default border */
-    border-radius: 25px; /* Rounded corners */
-    padding: 10px 15px; /* Padding for button size */
-    cursor: pointer; /* Cursor changes to pointer on hover */
-    z-index: 1000; /* Ensures button is on top of other elements */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 #darkModeToggle:hover {
-    background-color: #555; /* Darker color on hover */
-    transform: scale(1.05); /* Slightly enlarge the button on hover */
+    background-color: #555;
+    transform: scale(1.05);
 }
 
 /* Hide Dark Mode Button on Smaller Screens */
 @media (max-width: 768px) {
     #darkModeToggle {
-        display: none; /* Hides the button on smaller screens */
+        display: none;
     }
 }
