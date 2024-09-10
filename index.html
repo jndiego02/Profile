@@ -17,13 +17,15 @@
 
     <!-- Header Section -->
     <header class="header">
-<!-- Burger Menu Icon -->
-<div class="container">
-<div class="burger-icon" onclick="toggleBurgerMenu()">&#9776;</div>
 
 <!-- Dark Mode Toggle Button with Icon -->
 <button id="darkModeToggle" onclick="toggleDarkMode()">🌙</button>
 
+<!-- Burger Menu Icon -->
+<div class="container">
+
+<div class="burger-icon" onclick="toggleBurgerMenu()">&#9776;
+</div>
 
 <!-- Menu Items (Collapsed) -->
 <nav class="burger-menu" id="burgerMenu">
@@ -53,7 +55,7 @@
         <div class="container">
             <img src="pic.png" alt="Profile Photo" class="profile-photo">
             <h2>Jasper</h2>
-            <h3>Customer Service Representative | Real Estate Cold Caller/VA | Canva Wiz</h3>
+            <h3>Customer Service Representative | Real Estate Virtual Assistant | Cold Caller</h3>
         <p>
         <!-- Typing Animation Text -->
         <div class="typing-animation">
@@ -74,16 +76,16 @@
             <ul class="skills-list">
                 <li>Customer Service</li>
                 <li>Real Estate</li>
-                <li>Technical Support</li>
-                <li>Mortgage</li>
-                <li>Sales</li>
+                <li>Virtual Assistance</li>
                 <li>Cold Calling</li>
                 <li>E-commerce</li>
-                <li>Lead Generation</li>
-                <li>Virtual Assistance</li>
+                <li>Technical Support</li>
                 <li>Appointment Setting</li>
-                <li>Executive Support</li>
+                <li>Sales</li>
                 <li>Data Entry</li>
+                <li>Lead Generation</li>
+                <li>Executive Support</li>
+                <li>Mortgage</li>
                 <li>Social Media Content</li>
                 <li>Photo and Video Editing</li>
             </ul>
@@ -97,7 +99,7 @@
 
         <!-- Customer Support Roles -->
         <h3>Customer Support Roles</h3>
-        <p>★ ★ ★ ★ ★</p>
+        <p id="star" style="color:#debe1a;">★ ★ ★ ★ ★</p>
         <ul>
             <li><strong>Company:</strong> Customer Support.</li>
             <li><strong>Company:</strong> Customer Service and Sales.</li>
@@ -107,7 +109,7 @@
         <section id="bg" class="bg">
         <!-- Real Estate Roles -->
         <h3>Real Estate Roles</h3>
-        <p>★ ★ ★ ★ ★</p>
+        <p id="star" style="color:#debe1a;">★ ★ ★ ★ ★</p>
         <ul>
             <li><strong>(Mortgage Company):</strong> Handled back-office tasks, including requesting documents.</li>
             <li><strong>Cold Caller:</strong> Reached out to potential clients, generated leads, and set up appointments.</li>
@@ -116,12 +118,12 @@
 
     <!-- Blog Articles Section -->
         <div class="container">
-            <h4>Background and Test Scores</h4>
+            <h4>Summary, Feedbacks and Test Scores</h4>
             <div class="grid">
                 <!-- Tools Image - Positioned below the articles -->
             <div class="article" style="grid-column: span 2;">
-                <a href="javascript:void(0);" onclick="openModal('tools.jpg')">
-                <img src="tools.jpg" alt="Tools" style="width: 100%; height: 250px; object-fit: cover;">
+                <a href="javascript:void(0);" onclick="openModal('tools.JPG')">
+                <img src="tools.JPG" alt="Tools" style="width: 100%; height: 250px; object-fit: cover;">
                 </a>
                 <p>Tools</p>
             </div>
@@ -133,30 +135,19 @@
                 <p>Video Introduction</p>
             </div>
 
-                <div class="article">
-                    <a href="javascript:void(0);" onclick="openModal('disc2.png')">
-                    <img src="disc.png" alt="DISC Test">
-                    </a>
-                    <p>DISC Test</p>
-                </div>
-                <div class="article">
-                    <a href="javascript:void(0);" onclick="openModal('iq.jpg')">
-                    <img src="iq.png" alt="IQ Test">
-                    </a>
-                    <p>IQ Test</p>
-                </div>
-                <div class="article">
-                    <a href="javascript:void(0);" onclick="openModal('english.jpg')">
-                    <img src="english.png" alt="English Test">
-                    </a>
-                    <p>English Test</p>
-                </div>
-                <div class="article">
-                    <a href="javascript:void(0);" onclick="openModal('typing2.png')">
-                    <img src="typing.png" alt="Typing Tests">
-                    </a>
-                    <p>Typing Tests</p>
-                </div>
+            <div class="article" style="grid-column: span 2;">
+                <a href="javascript:void(0);" onclick="openModal('iq.JPG')">
+                <img src="iq.JPG" alt="Tools" style="width: 100%; height: 250px; object-fit: cover;">
+                </a>
+                <p>Reviews</p>
+            </div>
+            <div class="article" style="grid-column: span 2;">
+                <a href="javascript:void(0);" onclick="openModal('disc.png')">
+                <img src="disc.png" alt="Tools" style="width: 100%; height: 250px; object-fit: cover;">
+                </a>
+                <p>Tests</p>
+            </div>            
+
             </div>
         </div>
 
@@ -171,7 +162,7 @@
 <!-- Calendly badge widget begin -->
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-<script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/jndiego-02/30min', text: 'Work with me', color: '#0069ff', textColor: '#ffffff', branding: undefined }); }</script>
+<script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/jndiego-02/30min', text: 'Schedule a call', color: '#0858b2', textColor: '#ffffff', branding: undefined }); }</script>
 <!-- Calendly badge widget end -->
 </div>
 </section>
@@ -185,7 +176,7 @@
     <footer class="footer">
         <section id="contact" class="contact">
         <div class="container">
-            <p>Sounds like what you need? Send me an email and let’s get started.</p>
+            <p>Sounds like what you need? Schedule a session or email me to get started.</p>
             <ul>
                 <li><a href="mailto:email@example.com">Email</a></li>
                 <li><a href="https://jndiego02.github.io/Profile/">Website</a></li>

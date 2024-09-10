@@ -1,5 +1,3 @@
-// script.js
-
 // Toggle visibility of the scroll-to-top button based on scroll position
 function handleScroll() {
     const scrollTopBtn = document.getElementById("scrollTopBtn");
@@ -34,13 +32,21 @@ function toggleBurgerMenu() {
 function openModal(imageSrc) {
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImage");
-    modal.style.display = "block";
+    modal.style.display = "flex";
     modalImg.src = imageSrc;
 }
 
 function closeModal() {
     const modal = document.getElementById("imageModal");
     modal.style.display = "none";
+}
+
+// Function to close modals when the ESC key is pressed
+function handleKeyPress(event) {
+    if (event.key === "Escape") {
+        closeCVModal();
+        closeModal();
+    }
 }
 
 // Typing effect for text
@@ -123,6 +129,7 @@ function updateScrollButtonVisibility() {
 document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', updateScrollButtonVisibility);
     window.addEventListener('resize', updateScrollButtonVisibility);
+    window.addEventListener('keydown', handleKeyPress); // Add keydown event listener
     updateScrollButtonVisibility(); // Initial call to set the correct button state
 });
 
