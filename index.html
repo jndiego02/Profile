@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Freelance Portfolio</title>
+    <title>**** Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
 </head>
@@ -21,6 +21,10 @@
 <div class="container">
 <div class="burger-icon" onclick="toggleBurgerMenu()">&#9776;</div>
 
+<!-- Dark Mode Toggle Button with Icon -->
+<button id="darkModeToggle" onclick="toggleDarkMode()">🌙</button>
+
+
 <!-- Menu Items (Collapsed) -->
 <nav class="burger-menu" id="burgerMenu">
     <ul>
@@ -28,7 +32,7 @@
         <li><a href="#overview">Overview</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#work-history">Work History</a></li>
-        <li><a href="#contact">Contacts</a></li>
+        <li><a href="#bg">Video Introduction</a></li>
         <li><a href="mailto:email@example.com" class="button">Hire Me!</a></li>
     </ul>
 </nav>
@@ -39,7 +43,7 @@
     <div id="cvModal">
     <span class="close-button" onclick="closeCVModal()">&times;</span>
     <div class="modal-content">
-        <iframe src="resume.pdf"></iframe>
+        <iframe src="https://drive.google.com/file/d/1JsPXPqNF0Lv_jPpLIiW4mBihE2xauGdx/preview"></iframe>
     </div>
     </div>
 
@@ -48,14 +52,23 @@
     <section class="hero">
         <div class="container">
             <img src="pic.png" alt="Profile Photo" class="profile-photo">
-            <h2>Freelance Writer & Content Creator</h2>
-            <p>Helping businesses with content strategy, social media management, and SEO.</p>
-            <a href="#work-history" class="button">My Work History</a>
+            <h2>Jasper</h2>
+            <h3>Customer Service Representative | Real Estate Cold Caller/VA | Canva Wiz</h3>
+        <p>
+        <!-- Typing Animation Text -->
+        <div class="typing-animation">
+            <span id="typed-text"></span>
+            <span class="cursor">ㅤ</span>
         </div>
+        </p>
+            <a href="#calendly" class="button">Let's work together!</a>
+        </div>
+
+        <section id="skills"></section>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <section class="skills">
         <div class="container">
             <h3>Skills</h3>
             <ul class="skills-list">
@@ -91,7 +104,7 @@
             <li><strong>Company:</strong> Technical and Billing Support.</li>
             <li><strong>E-Commerce:</strong> Emails and Chats.</li>
         </ul>
-
+        <section id="bg" class="bg">
         <!-- Real Estate Roles -->
         <h3>Real Estate Roles</h3>
         <p>★ ★ ★ ★ ★</p>
@@ -102,64 +115,83 @@
     </div>
 
     <!-- Blog Articles Section -->
-
         <div class="container">
-            <h3>Background and Test Scores</h3>
+            <h4>Background and Test Scores</h4>
             <div class="grid">
                 <!-- Tools Image - Positioned below the articles -->
             <div class="article" style="grid-column: span 2;">
-                <a href="javascript:void(0);" onclick="openModal('iq.jpg')">
-                    <img src="iq.jpg" alt="Tools" style="width: 100%; height: 250px; object-fit: cover;">
+                <a href="javascript:void(0);" onclick="openModal('tools.jpg')">
+                <img src="tools.jpg" alt="Tools" style="width: 100%; height: 250px; object-fit: cover;">
                 </a>
                 <p>Tools</p>
             </div>
 
             <!-- Video Introduction - Positioned below the articles -->
             <div class="article" style="grid-column: span 2;">
-                <iframe src="https://drive.google.com/file/d/FILE_ID/preview" width="100%" height="250px" style="border-radius: 5px; border: 1px solid #e1e8ee;" allow="autoplay" allowfullscreen></iframe>
+                <!-- <iframe src="vid.mp4" width="100%" height="250px" style="border-radius: 5px; border: 1px solid #e1e8ee;" allow="autoplay" allowfullscreen></iframe> -->
+                <img src="vid.jpg" alt="Tools" style="width: 100%; height: 250px; object-fit: cover;">
                 <p>Video Introduction</p>
             </div>
 
                 <div class="article">
-                    <a href="javascript:void(0);" onclick="openModal('disc.jpg')">
-                    <img src="disc.jpg" alt="DISC Test">
+                    <a href="javascript:void(0);" onclick="openModal('disc2.png')">
+                    <img src="disc.png" alt="DISC Test">
                     </a>
                     <p>DISC Test</p>
                 </div>
                 <div class="article">
                     <a href="javascript:void(0);" onclick="openModal('iq.jpg')">
-                    <img src="iq.jpg" alt="IQ Test">
+                    <img src="iq.png" alt="IQ Test">
                     </a>
                     <p>IQ Test</p>
                 </div>
                 <div class="article">
                     <a href="javascript:void(0);" onclick="openModal('english.jpg')">
-                    <img src="english.jpg" alt="English Test">
+                    <img src="english.png" alt="English Test">
                     </a>
                     <p>English Test</p>
                 </div>
                 <div class="article">
-                    <a href="javascript:void(0);" onclick="openModal('typing.jpg')">
-                    <img src="typing.jpg" alt="Typing Tests">
+                    <a href="javascript:void(0);" onclick="openModal('typing2.png')">
+                    <img src="typing.png" alt="Typing Tests">
                     </a>
                     <p>Typing Tests</p>
                 </div>
-
             </div>
         </div>
+
+<section id="calendly" class="calendly">
+<div class="container">
+    <h2>Work with me</h2>
+    <!-- Calendly inline widget begin -->
+<div class="calendly-inline-widget" data-url="https://calendly.com/jndiego-02/30min" style="min-width:320px;height:700px;"></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Calendly inline widget end -->
+
+<!-- Calendly badge widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/jndiego-02/30min', text: 'Work with me', color: '#0069ff', textColor: '#ffffff', branding: undefined }); }</script>
+<!-- Calendly badge widget end -->
+</div>
+</section>
+
     </section>
+
+
+
 
     <!-- Footer Section -->
     <footer class="footer">
         <section id="contact" class="contact">
         <div class="container">
-            <p>Sounds like what you need? Drop an email to connect!</p>
+            <p>Sounds like what you need? Send me an email and let’s get started.</p>
             <ul>
                 <li><a href="mailto:email@example.com">Email</a></li>
-                <li><a href="#">Website</a></li>
-                <li><a href="#">Calendly</a></li>
+                <li><a href="https://jndiego02.github.io/Profile/">Website</a></li>
+                <li><a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/jndiego-02/30min'});return false;">Calendly</a></li>
             </ul>
-            <p>&copy; 2024 **Name** - All Rights Reserved</p>
+            <p>&copy; 2024 **** - All Rights Reserved</p>
         </div>
     </footer>
 
@@ -168,7 +200,6 @@
     <span class="close" onclick="closeModal()">&times;</span>
     <img class="modal-content" id="modalImage">
 </div>
-
 
 </body>
 </html>
