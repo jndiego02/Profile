@@ -97,6 +97,7 @@ function toggleDarkMode() {
     darkModeToggleButton.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
 }
 
+
 // Handle dark mode toggle and resize events
 window.addEventListener('resize', function() {
     if (window.innerWidth < 768) {
