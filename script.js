@@ -14,14 +14,17 @@ function scrollToTop() {
 }
 
 // Open and close CV modal
-    function openCVModal() {
-        const isMobile = window.matchMedia("(max-width: 768px)").matches; // You can adjust the breakpoint as needed
-        if (isMobile) {
-            window.location.href = 'https://drive.google.com/file/d/1Ua_oERb4NKJ9njJYNaWcfpOkmnE0Gckl/preview'; // Directly download the file
-        } else {
-            document.getElementById('cvModal').style.display = 'block';
+function openCVModal() {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches; // Adjust the breakpoint as needed
+    if (isMobile) {
+        window.open('https://drive.google.com/file/d/1Ua_oERb4NKJ9njJYNaWcfpOkmnE0Gckl/preview', '_blank'); // Open link in new tab
+    } else {
+        const cvModal = document.getElementById('cvModal');
+        if (cvModal) {
+            cvModal.style.display = 'block'; // Show the modal
         }
     }
+}
 
 function closeCVModal() {
     document.getElementById("cvModal").style.display = "none";
