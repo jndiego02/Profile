@@ -14,9 +14,14 @@ function scrollToTop() {
 }
 
 // Open and close CV modal
-function openCVModal() {
-    document.getElementById("cvModal").style.display = "block";
-}
+    function openCVModal() {
+        const isMobile = window.matchMedia("(max-width: 768px)").matches; // You can adjust the breakpoint as needed
+        if (isMobile) {
+            window.location.href = 'https://drive.google.com/file/d/1Ua_oERb4NKJ9njJYNaWcfpOkmnE0Gckl/preview'; // Directly download the file
+        } else {
+            document.getElementById('cvModal').style.display = 'block';
+        }
+    }
 
 function closeCVModal() {
     document.getElementById("cvModal").style.display = "none";
@@ -51,7 +56,7 @@ function handleKeyPress(event) {
 
 // Typing effect for text
 document.addEventListener('DOMContentLoaded', function () {
-    const textArray = ["7+ years experience", "Available Full-time (40 hrs/wk)", "Contact Me!"];
+    const textArray = ["6+ years experience", "Available Full-time (40 hrs/wk)", "Contact Me!"];
     const typingSpeed = 50;
     const erasingSpeed = 50;
     const delayBetweenPhrases = 1500;
@@ -140,4 +145,9 @@ window.addEventListener('load', function() {
     if (overview) {
         overview.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+});
+
+//Disable right lick
+document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
 });
